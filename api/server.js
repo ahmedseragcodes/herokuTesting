@@ -10,7 +10,7 @@ server.use(express.json());
 server.use(helmet());
 server.use(cors());
 server.use("/api/characters", CharactersRouter);
-server.use(express.static(path.join(__dirname, "client/build")));
+server.use(express.static(path.join(__dirname, "./client/build")));
 
 //SANITY CHECK ENDPOINT
 // server.get("/", (req, res, next)=>{
@@ -18,7 +18,7 @@ server.use(express.static(path.join(__dirname, "client/build")));
 // });
 
 server.use("*", (req, res)=>{
-    res.sendfile(path.join(__dirname, "client/build", "index.html"));
+    res.sendfile(path.join(__dirname, "./client/build", "./client/build/index.html"));
 })
 
 module.exports = server;
