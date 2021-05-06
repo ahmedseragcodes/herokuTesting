@@ -16,7 +16,7 @@ class App extends React.Component {
   }
 
 componentDidMount(){
-  axios.get("http://localhost:1234/api/characters")
+  axios.get("https://lordoftheringscharacters.herokuapp.com/api/characters")
   .then((res)=>{
     console.log("SUCCEEDED GETTING ALL CHARS", res.data);
     this.setState({
