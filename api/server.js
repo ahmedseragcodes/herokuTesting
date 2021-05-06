@@ -6,11 +6,11 @@ const path = require("path");
 
 const server = express();
 
+
 server.use(express.json());
 server.use(helmet());
 server.use(cors());
 server.use("/api/characters", CharactersRouter);
-server.use(express.static(path.join(__dirname, "client/build")));
 
 //SANITY CHECK ENDPOINT
 // server.get("/", (req, res, next)=>{
