@@ -10,10 +10,26 @@ class App extends React.Component {
     super();
     this.state = {
       characters: [
-    {name: "Frodo"},
-    {name: "Gimley"},
+    {character_name: "Frodo"},
+    {character_name: "Gimley"},
       ]}
   }
+
+componentDidMount(){
+  axios.get("http://localhost:1234/api/characters")
+  .then((res)=>{
+    console.log("SUCCEEDED GETTING ALL CHARS", res.data);
+    this.setState({
+      ...this.state,
+      characters: res.data
+    })
+    console.log(this.state.characters)
+  })
+  .catch((err)=>{
+    console.log("FAILED GETTING ALL CHARACTERS", err);
+  })
+}
+
 render(){
   return (
     <div>
@@ -22,7 +38,7 @@ render(){
         this.state.characters.map((eachChar)=>{
           return (
             <div className="characterContainer">
-              <p>{eachChar.name}</p>
+              <p>{eachChar.character_name}</p>
             </div>
           )
         })
