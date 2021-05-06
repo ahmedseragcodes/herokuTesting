@@ -18,7 +18,7 @@ server.use("/api/characters", CharactersRouter);
 // });
 
 server.use("*", (req, res)=>{
-    res.sendFile(path.join(__dirname, "client/build", "index.html"));
+    res.sendFile(path.join(__dirname, "../client/build", "index.html"));
 });
 
 module.exports = server;
