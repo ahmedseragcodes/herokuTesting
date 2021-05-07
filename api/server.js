@@ -17,8 +17,8 @@ server.use("/api/characters", CharactersRouter);
 //     res.json({message: "API Up"});
 // });
 
-server.use("*", (req, res)=>{
-    res.sendFile(path.join(__dirname, "../client/build", "index.html"));
-});
+// server.use("*", (req, res)=>{
+//     res.sendFile(path.join(__dirname, "../client/build", "index.html"));
+// });
 
 module.exports = server;
